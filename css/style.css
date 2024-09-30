@@ -1,0 +1,121 @@
+body {
+    font-family: "Alfa Slab One", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: faffff;
+}
+  
+
+
+header {
+    display: flex; /* Utiliza Flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia elementos de forma equitativa */
+    align-items: center; /* Alinea verticalmente al centro */
+    padding: 10px 20px; /* Espaciado interior */
+    background-color: #e12727; 
+}
+nav {
+    display: flex; /* Utiliza Flexbox para alinear los elementos del nav */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: #fdbb2b;
+    color: #faffff;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: left;
+    font-size: small;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card h3 h2 {
+    margin: 5px 0;
+}
+
+.card .likes,
+.card .price {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.sidecard {
+    width: 70%;
+    height: auto;
+    background-color: #faffff;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 0.5em;
+}
+
+.sidenav {
+    position: fixed;
+    top: 63px;
+    /* Inicia justo después del header */
+    right: 0;
+    height: calc(100vh - 63px);
+    /* Calcula la altura restante después del header */
+    width: 300px;
+    border-left: 5px solid #fdbb2b;
+    /* Border color and thickness */
+    background-color: #e12727;
+    /* Background color */
+    padding: 1em;
+    text-align: left;
+    font-size: small;
+    box-sizing: border-box;
+    /* Ensures padding and border are included in the width */
+    display: flex;
+    /* Utiliza flexbox para la alineación */
+    flex-direction: column;
+    /* Alinea los elementos en una columna */
+    align-items: center;
+    /* Centra los elementos horizontalmente */
+    justify-content: flex-start;
+    /* Comienza desde la parte superior */
+    overflow-y: auto;
+    /* Habilita el scroll en la barra derecha */
+}
+
+.sidecard h3 {
+    color: #e12727;
+    font-size: larger;
+    text-align: center;
+    font-weight: bold;
+}
+
+.sidecard h2 {
+    font-size: large;
+    color: #fdbb2b;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.sidecard-item {
+    background-color: #e12727;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration:none;
+    font-size:small;
+}
