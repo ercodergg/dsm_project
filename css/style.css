@@ -2,60 +2,92 @@ body {
     font-family: "Alfa Slab One", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: faffff;
+    background-color: #faffff;
 }
-  
+
 
 
 header {
-    display: flex; /* Utiliza Flexbox para alinear elementos */
-    justify-content: space-between; /* Espacia elementos de forma equitativa */
-    align-items: center; /* Alinea verticalmente al centro */
-    padding: 10px 20px; /* Espaciado interior */
-    background-color: #e12727; 
+    display: flex;
+    /* Utiliza Flexbox para alinear elementos */
+    justify-content: space-between;
+    /* Espacia elementos de forma equitativa */
+    align-items: center;
+    /* Alinea verticalmente al centro */
+    padding: 35px 10%;
+    /* Espaciado interior */
+    background-color: #cf1022;
 }
+
 nav {
-    display: flex; /* Utiliza Flexbox para alinear los elementos del nav */
-    align-items: center; /* Alinea verticalmente al centro */
+    display: flex;
+    /* Utiliza Flexbox para alinear los elementos del nav */
+    align-items: center;
+    /* Alinea verticalmente al centro */
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    padding: 3em;
+    width: calc(100% - 20%); /* Deja espacio para el sidenav que ocupa el 20% */
+    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho */
+    overflow-y: auto; /* Habilita el scroll si es necesario */
+    max-height: calc(100vh - 92px); /* Ajusta la altura máxima del contenedor */
+    -ms-overflow-style: none; /* Oculta la barra en Internet Explorer */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+/* Para mostrar el scrollbar en otros navegadores */
+.container::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome y Safari */
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    flex-grow: 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3em;
 }
 
+
 .card {
-    background-color: #fdbb2b;
+    height: 24em;
+    max-width: 22em;
+    background-color: #fbbf00;
     color: #faffff;
     border-radius: 8px;
-    padding: 10px;
-    text-align: left;
-    font-size: small;
+    padding: 1em;
+    display: flex; /* Añadir flexbox */
+    flex-direction: column; /* Asegura que los elementos se apilen en columna */
+    text-align: left; /* Centra el texto */
+    font-size: 1.2em;
 }
 
 .card img {
-    width: 100%;
+    width: 98%;
     height: auto;
-    border-radius: 8px;
+    margin: 0 auto; /* Asegura el centrado horizontal de la imagen */
 }
 
-.card h3 h2 {
+
+.card h2 {
+    color: #cf1022;
     margin: 5px 0;
+    font-style: italic; /* Cambia el texto a cursivo */
+    font-weight: normal; /* Asegura que no esté en negrita */
+}
+.card p {
+    display: flex;
+    align-items: center;
+    margin-top: 0.8em;
 }
 
-.card .likes,
-.card .price {
-    font-size: 16px;
-    margin: 5px 0;
+.card p i {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    font-size: 1.2em; /* Tamaño del ícono */
 }
-
 .sidecard {
     width: 70%;
     height: auto;
@@ -67,15 +99,15 @@ nav {
 
 .sidenav {
     position: fixed;
-    top: 63px;
+    top: 92px;
     /* Inicia justo después del header */
     right: 0;
-    height: calc(100vh - 63px);
+    height: calc(100vh - 92px);
     /* Calcula la altura restante después del header */
-    width: 300px;
-    border-left: 5px solid #fdbb2b;
+    width: 20%;
+    border-left: 10px solid #fbbf00;
     /* Border color and thickness */
-    background-color: #e12727;
+    background-color: #cf1022;
     /* Background color */
     padding: 1em;
     text-align: left;
@@ -92,30 +124,41 @@ nav {
     /* Comienza desde la parte superior */
     overflow-y: auto;
     /* Habilita el scroll en la barra derecha */
+    -ms-overflow-style: none;
+    /* Oculta la barra en Internet Explorer */
+    scrollbar-width: none;
+    /* Oculta la barra en Firefox */
+}
+
+.sidenav::-webkit-scrollbar {
+    display: none;
+    /* Oculta la barra en Chrome, Safari y Opera */
 }
 
 .sidecard h3 {
-    color: #e12727;
+    color: #000000;
     font-size: larger;
     text-align: center;
-    font-weight: bold;
+    text-align: left;
+    font-weight: normal; /* Asegura que no esté en negrita */
 }
 
 .sidecard h2 {
     font-size: large;
-    color: #fdbb2b;
+    color: #fbbf00;
     text-align: center;
-    font-weight: bold;
     font-style: italic;
+    text-align: left;
+    font-weight: normal; /* Asegura que no esté en negrita */
 }
 
 .sidecard-item {
-    background-color: #e12727;
+    background-color: #cf1022;
     color: white;
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 10px;
     text-align: center;
-    text-decoration:none;
-    font-size:small;
+    text-decoration: none;
+    font-size: small;
 }
