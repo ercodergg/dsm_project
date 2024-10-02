@@ -10,9 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <title>SnackTalk</title>
     <link rel="stylesheet" href="css/login.css">
-    <script src="js/registrarse.js" defer></script>
-
-
+    <script src="js/registrarse.js"></script>
 </head>
 
 <body>
@@ -24,34 +22,47 @@
         </div>
         <nav>
             <input type="text" class="buscar" placeholder="Buscar...">
-            <button id="registrar" class="blanco"
-                onclick="window.location.href='registrarse.html';">Registrarse</button>
+            <button id="registrar" class="blanco" onclick="window.location.href='registrarse.html';">Registrarse</button>
             <button id="iniciar" class="amarillo" onclick="window.location.href='inicio.html';">Iniciar sesión</button>
             <i class="fa-solid fa-user"></i>
         </nav>
     </header>
     <div id="login-form" class="login-form">
-        <h1><i class="fa-solid fa-user"></i></h1>
-        <h2>Registro</h2>
+        <h1><i class="fas fa-utensils"></i></h1>
+        <h2>Registro Restaurante</h2>
         <form onsubmit="handleSubmit(event)">
             <label>¿Qué eres?</label>
-            <button class="blanco">Cliente</button>
-            <button class="amarillo" onclick="window.location.href='registrarse-rest.html';">Restaurante</button>
-            <label for="username">Nombre de usuario</label>
-            <input type="text" id="username" name="username" required>
+            <button class="blanco">Restaurante</button>
+            <button class="amarillo" onclick="window.location.href='registrarse.html';">Cliente</button>
+            
+            <label for="restaurant-name">Nombre del Restaurante</label>
+            <input type="text" id="restaurant-name" name="restaurant-name" placeholder="La Parrilla de Don Pepe" required>
             <br>
+            
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Calle Falsa 123, Ciudad" required>
+            <br>
+
+            <label for="tipo-cocina">Tipo de Cocina</label>
+            <input type="text" id="tipo-cocina" name="tipo-cocina" placeholder="Italiana y Mexicana" required>
+            <br>
+            
             <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" placeholder="Introduce una contraseña segura" required>
             <br>
+            
             <label for="password2">Repetir contraseña</label>
-            <input type="password" id="password2" name="password2" required>
+            <input type="password" id="password2" name="password2" placeholder="Repite la contraseña" required>
             <br>
+            
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
             <br>
+            
             <label for="telefono">Teléfono (opcional)</label>
-            <input type="number" id="telefono" name="telefono">
+            <input type="number" id="telefono" name="telefono" placeholder="5551234567">
             <br>
+            
             <button type="submit" class="azul">Enviar</button>
             <button type="reset" class="rojo">Borrar</button>
         </form>

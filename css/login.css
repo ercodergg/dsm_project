@@ -1,3 +1,77 @@
+body {
+    font-family: "Alfa Slab One", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #faffff; /* Fondo del cuerpo */
+}
+
+header {
+    display: flex;
+    flex-direction: column; /* Cambia a columna para alinear elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 10px 5%; /* Ajuste de padding */
+    background-color: #cf1022; /* Color de fondo del header */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly; /* Espacia los elementos del nav para ocupar todo el ancho */
+    width: 100%; /* Asegura que el nav ocupe todo el ancho del header */
+}
+
+nav i {
+    font-size: 1.5em; /* Tamaño del ícono */
+    color: #fbbf00;
+}
+nav input{
+    width:60%;
+}
+.icon {
+    width: 130px; /* Ajusta el tamaño del logo según sea necesario */
+}
+
+input {
+    border-radius: 15px; /* Bordes redondeados */
+    border: 1px solid #faffff; /* Borde ligero */
+    padding: 8px 10px; /* Espaciado interior */
+    margin-right: 10px; /* Espacio a la derecha del input */
+    width: 88%; /* Ancho del input */
+}
+button {
+    font-family: "Alfa Slab One";
+    font-weight: normal; /* Asegura que no esté en negrita */
+    color: #000000; /* Color del texto */
+    border: none; /* Elimina el borde predeterminado */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 8px 10px; /* Espaciado interior */
+    margin-left: 10px; /* Espacio entre los botones */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-size: 1em; /* Ajusta el tamaño de la fuente */
+}
+
+.amarillo {
+    background-color: #fbbf00; /* Color de fondo amarillo */
+    color: #000000; /* Color de texto negro */
+}
+
+.blanco {
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: #000000; /* Color de texto negro */
+}
+
+.azul {
+    background-color: #2b78e4; /* Color de fondo azul */
+    color: #faffff; /* Color de texto blanco */
+}
+
+.rojo {
+    background-color: #cf1022; /* Color de fondo rojo */
+    color: #ffffff; /* Color de texto blanco */
+}
+form{
+    font-size: 0.9em;
+}
 .login-form {
     background-color: #999999;
     padding: 2em;
@@ -17,25 +91,20 @@
     display: block;
     margin-bottom: 5px;
     text-align: left;
+    margin-top: 0.8em;
 }
 
-.login-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #faffff;
-    border-radius: 5px;
+.login-form  button{
+    margin:0.6em;
 }
 
-.login-form button {
-    background-color: #2b78e4;
-    color: #faffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin: 5px;
+.login-form input[type="number"]::-webkit-outer-spin-button,
+.login-form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-.login-form button[type="reset"] {
-    background-color: #cf1022;
+/* Eliminar flechas en Firefox */
+.login-form input[type="number"] {
+    -moz-appearance: textfield;
 }

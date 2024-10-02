@@ -10,12 +10,12 @@ header {
     display: flex;
     flex-direction: column; /* Cambia a columna para alinear elementos verticalmente */
     align-items: center; /* Centra los elementos horizontalmente */
-    padding: 10px 10%; /* Ajuste de padding */
+    padding: 10px 5%; /* Ajuste de padding */
     background-color: #cf1022; /* Color de fondo del header */
 }
 
 .icon {
-    width: 200px; /* Ajusta el tamaño del logo según sea necesario */
+    width: 160px; /* Ajusta el tamaño del logo según sea necesario */
 }
 
 nav {
@@ -29,7 +29,7 @@ nav i {
 }
 
 .buscar {
-    border-radius: 20px; /* Bordes redondeados */
+    border-radius: 15px; /* Bordes redondeados */
     border: 1px solid #faffff; /* Borde ligero */
     padding: 10px 15px; /* Espaciado interior */
     margin-right: 10px; /* Espacio a la derecha del input */
@@ -37,10 +37,12 @@ nav i {
 }
 
 button {
+    font-family: "Alfa Slab One";
+    font-weight: normal; /* Asegura que no esté en negrita */
     color: #000000; /* Color del texto */
     border: none; /* Elimina el borde predeterminado */
     border-radius: 20px; /* Bordes redondeados */
-    padding: 10px 15px; /* Espaciado interior */
+    padding: 8px 10px; /* Espaciado interior */
     margin-left: 10px; /* Espacio entre los botones */
     cursor: pointer; /* Cambia el cursor al pasar por encima */
     font-size: 1em; /* Ajusta el tamaño de la fuente */
@@ -48,12 +50,12 @@ button {
 }
 
 /* Estilos específicos para el botón de registro */
-#registrar {
+.blanco {
     background-color: #faffff; /* Color de fondo de 'Registrarse' */
 }
 
 /* Estilos específicos para el botón de iniciar sesión */
-#iniciar {
+.amarillo {
     background-color: #fbbf00; /* Color de fondo de 'Iniciar sesión' */
 }
 
@@ -61,7 +63,7 @@ button {
     display: flex;
     justify-content: flex-start; /* Alinea el contenido a la izquierda */
     padding: 3em;
-    width: calc(100% - 20%); /* Deja espacio para el sidenav que ocupa el 20% */
+    width: 100%; /* Deja espacio para el sidenav que ocupa el 20% */
     box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho */
     overflow-y: auto; /* Habilita el scroll si es necesario */
     max-height: calc(100vh - 122px); /* Ajusta la altura máxima del contenedor */
@@ -74,6 +76,22 @@ button {
     display: none; /* Oculta la barra en Chrome y Safari */
 }
 
+.container-3cuartos {
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    padding: 3em;
+    width: calc(100% - 20%); /* Deja espacio para el sidenav que ocupa el 20% */
+    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho */
+    overflow-y: auto; /* Habilita el scroll si es necesario */
+    max-height: calc(100vh - 122px); /* Ajusta la altura máxima del contenedor */
+    -ms-overflow-style: none; /* Oculta la barra en Internet Explorer */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+/* Para mostrar el scrollbar en otros navegadores */
+.container-3cuartos-pantalla::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome y Safari */
+}
 .cards {
     flex-grow: 1; /* Cambiado de 1em a 1 para flex-grow */
     display: flex;
@@ -82,9 +100,9 @@ button {
     gap: 3em;
 }
 
-.card {
-    width: 18%; /* Ancho fijo */
-    aspect-ratio: 4 / 5; /* Proporción de 3:4 (ancho:alto) */
+.card, .card-encamino {
+    max-width: 13em; /* Ancho fijo */
+    height:max-content;
     background-color: #fbbf00;
     color: #faffff;
     border-radius: 8px;
@@ -95,7 +113,10 @@ button {
     font-size: 1.2em;
     overflow: hidden; /* Evita que el contenido desborde el card */
 }
-
+.card-encamino {
+    background-color: #999999;
+    color: #faffff;
+}
 
 .card img {
     width: 98%;
@@ -108,6 +129,7 @@ button {
     margin: 5px 0;
     font-style: italic; /* Cambia el texto a cursivo */
     font-weight: normal; /* Asegura que no esté en negrita */
+
 }
 
 .card p {
@@ -132,9 +154,9 @@ button {
 
 .sidenav {
     position: fixed;
-    top: 177px; /* Inicia justo después del header */
+    top: 153px; /* Inicia justo después del header */
     right: 0;
-    height: calc(100vh - 177px); /* Calcula la altura restante después del header */
+    height: calc(100vh - 153px); /* Calcula la altura restante después del header */
     width: 20%;
     border-left: 10px solid #fbbf00; /* Border color and thickness */
     background-color: #cf1022; /* Background color */
