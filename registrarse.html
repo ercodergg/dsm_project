@@ -27,7 +27,7 @@
             <button id="registrar" class="blanco"
                 onclick="window.location.href='registrarse.html';">Registrarse</button>
             <button id="iniciar" class="amarillo" onclick="window.location.href='inicio.html';">Iniciar sesión</button>
-            <i class="fa-solid fa-user"></i>
+            <i id="icono-usuario" class="fa-solid fa-user"></i>
         </nav>
     </header>
     <div id="login-form" class="login-form">
@@ -35,22 +35,25 @@
         <h2>Registro</h2>
         <form onsubmit="handleSubmit(event)">
             <label>¿Qué eres?</label>
-            <button class="blanco">Cliente</button>
+            <button id="tipo-usuario" class="blanco" value="Cliente">Cliente</button>
             <button class="amarillo" onclick="window.location.href='registrarse-rest.html';">Restaurante</button>
-            <label for="username">Nombre de usuario</label>
-            <input type="text" id="username" name="username" required>
+            <label for="nombre">Nombre de usuario</label>
+            <input type="text" id="nombre" name="nombre" required>
             <br>
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required>
+            <label for="pass">Contraseña</label>
+            <input type="password" id="pass" name="pass" required>
             <br>
-            <label for="password2">Repetir contraseña</label>
-            <input type="password" id="password2" name="password2" required>
+            <label for="pass2">Repetir contraseña</label>
+            <input type="password" id="pass2" name="pass2" required>
             <br>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="correoElectronico" name="correoElectronico" required>
             <br>
             <label for="telefono">Teléfono (opcional)</label>
             <input type="number" id="telefono" name="telefono">
+            <br>
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion">
             <br>
             <button type="submit" class="azul">Enviar</button>
             <button type="reset" class="rojo">Borrar</button>

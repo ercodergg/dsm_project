@@ -10,7 +10,7 @@ header {
     flex-direction: column; /* Cambia a columna para alinear elementos verticalmente */
     align-items: center; /* Centra los elementos horizontalmente */
     padding: 10px 5%; /* Ajuste de padding */
-    background-color: #cf1022; /* Color de fondo del header */
+    background-color: #e61227; /* Color de fondo del header */
     z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
 }
 
@@ -66,7 +66,7 @@ button {
 }
 
 .rojo {
-    background-color: #cf1022; /* Color de fondo rojo */
+    background-color: #e61227; /* Color de fondo rojo */
     color: #ffffff; /* Color de texto blanco */
 }
 form{
@@ -76,7 +76,7 @@ form{
     background-color: #999999;
     padding: 2em;
     border-radius: 5px;
-    width: 20%;
+    width: 50%;
     color: #faffff;
     margin: 50px auto;
     text-align: center;
@@ -107,4 +107,15 @@ form{
 /* Eliminar flechas en Firefox */
 .login-form input[type="number"] {
     -moz-appearance: textfield;
+}
+@media (min-width: 800px){
+    .login-form {
+        width: 30%;
+    }
+}
+/* Ocultar el elemento con ID icono-usuario a partir de un tamaño de pantalla específico */
+@media (max-width: 1000px) {
+    #icono-usuario {
+        display: none;
+    }
 }
