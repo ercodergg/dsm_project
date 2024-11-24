@@ -1,99 +1,105 @@
+@import url('login.css');
+
 body {
-    font-family: "Alfa Slab One", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #faffff; /* Fondo del cuerpo */
-    overflow: hidden; /* Evita el scroll horizontal */
+    font-family: "Alfa Slab One", Arial, sans-serif;
+    background-color: #faffff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main sidenav";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 20%;
+    height: 100vh;
 }
 
 header {
+    grid-area: header;
     display: flex;
-    flex-direction: column; /* Cambia a columna para alinear elementos verticalmente */
-    align-items: center; /* Centra los elementos horizontalmente */
-    padding: 10px 5%; /* Ajuste de padding */
-    background-color: #cf1022; /* Color de fondo del header */
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #e61227;
+    z-index: 1000;
+}
+
+.sidenav {
+    grid-area: sidenav;
+    background-color: #cf1022;
+    border-left: 10px solid #fbbf00;
+    padding: 1em;
+    text-align: left;
+    font-size: small;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.sidenav::-webkit-scrollbar {
+    display: none;
+}
+
+main {
+    grid-area: main;
+    padding: 1em;
+    overflow-y: auto;
 }
 
 .icon {
-    width: 160px; /* Ajusta el tamaño del logo según sea necesario */
-}
-
-nav {
-    display: flex;
-    justify-content: space-evenly;  /* Espacia los elementos del nav para ocupar todo el ancho */
-    width: 100%;  /* Asegura que el nav ocupe todo el ancho del header */
-}
-nav i {
-    font-size: 1.5em; /* Tamaño del ícono */
-    color:#fbbf00;
+    width: 160px;
 }
 
 .buscar {
-    border-radius: 15px; /* Bordes redondeados */
-    border: 1px solid #faffff; /* Borde ligero */
-    padding: 10px 15px; /* Espaciado interior */
-    margin-right: 10px; /* Espacio a la derecha del input */
-    width: 50em; /* Ancho del input */
-}
-
-button {
-    font-family: "Alfa Slab One";
-    font-weight: normal; /* Asegura que no esté en negrita */
-    color: #000000; /* Color del texto */
-    border: none; /* Elimina el borde predeterminado */
-    border-radius: 20px; /* Bordes redondeados */
-    padding: 8px 10px; /* Espaciado interior */
-    margin-left: 10px; /* Espacio entre los botones */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    font-size: 1em; /* Ajusta el tamaño de la fuente */
-    background-color: #fbbf00; /* Color de fondo */
-}
-
-/* Estilos específicos para el botón de registro */
-.blanco {
-    background-color: #faffff; /* Color de fondo de 'Registrarse' */
-}
-
-/* Estilos específicos para el botón de iniciar sesión */
-.amarillo {
-    background-color: #fbbf00; /* Color de fondo de 'Iniciar sesión' */
+    border-radius: 15px;
+    border: 1px solid #faffff;
+    padding: 10px 15px;
+    margin-right: 10px;
+    width: 50em;
 }
 
 .container {
     display: flex;
-    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    justify-content: flex-start;
     padding: 3em;
-    width: 100%; /* Deja espacio para el sidenav que ocupa el 20% */
-    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho */
-    overflow-y: auto; /* Habilita el scroll si es necesario */
-    max-height: calc(100vh - 122px); /* Ajusta la altura máxima del contenedor */
-    -ms-overflow-style: none; /* Oculta la barra en Internet Explorer */
-    scrollbar-width: none; /* Oculta la barra en Firefox */
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    max-height: calc(100vh - 122px);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/* Para mostrar el scrollbar en otros navegadores */
 .container::-webkit-scrollbar {
-    display: none; /* Oculta la barra en Chrome y Safari */
+    display: none;
 }
 
 .container-3cuartos {
     display: flex;
-    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    justify-content: flex-start;
     padding: 3em;
-    width: calc(100% - 20%); /* Deja espacio para el sidenav que ocupa el 20% */
-    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho */
-    overflow-y: auto; /* Habilita el scroll si es necesario */
-    max-height: calc(100vh - 122px); /* Ajusta la altura máxima del contenedor */
-    -ms-overflow-style: none; /* Oculta la barra en Internet Explorer */
-    scrollbar-width: none; /* Oculta la barra en Firefox */
+    width: calc(100% - 20%);
+    box-sizing: border-box;
+    overflow-y: auto;
+    max-height: calc(100vh - 122px);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/* Para mostrar el scrollbar en otros navegadores */
 .container-3cuartos-pantalla::-webkit-scrollbar {
-    display: none; /* Oculta la barra en Chrome y Safari */
+    display: none;
 }
+
 .cards {
-    flex-grow: 1; /* Cambiado de 1em a 1 para flex-grow */
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -101,18 +107,19 @@ button {
 }
 
 .card, .card-encamino {
-    max-width: 13em; /* Ancho fijo */
-    height:max-content;
+    max-width: 13em;
+    height: max-content;
     background-color: #fbbf00;
     color: #faffff;
     border-radius: 8px;
     padding: 1em;
-    display: flex; /* Añadir flexbox */
-    flex-direction: column; /* Asegura que los elementos se apilen en columna */
-    text-align: left; /* Centra el texto */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
     font-size: 1.2em;
-    overflow: hidden; /* Evita que el contenido desborde el card */
+    overflow: hidden;
 }
+
 .card-encamino {
     background-color: #999999;
     color: #faffff;
@@ -121,15 +128,14 @@ button {
 .card img {
     width: 98%;
     height: auto;
-    margin: 0 auto; /* Asegura el centrado horizontal de la imagen */
+    margin: 0 auto;
 }
 
 .card h2 {
     color: #cf1022;
     margin: 5px 0;
-    font-style: italic; /* Cambia el texto a cursivo */
-    font-weight: normal; /* Asegura que no esté en negrita */
-
+    font-style: italic;
+    font-weight: normal;
 }
 
 .card p {
@@ -139,8 +145,8 @@ button {
 }
 
 .card p i {
-    margin-right: 8px; /* Espacio entre el ícono y el texto */
-    font-size: 1.2em; /* Tamaño del ícono */
+    margin-right: 8px;
+    font-size: 1.2em;
 }
 
 .sidecard {
@@ -152,44 +158,19 @@ button {
     margin: 0.5em;
 }
 
-.sidenav {
-    position: fixed;
-    top: 153px; /* Inicia justo después del header */
-    right: 0;
-    height: calc(100vh - 153px); /* Calcula la altura restante después del header */
-    width: 20%;
-    border-left: 10px solid #fbbf00; /* Border color and thickness */
-    background-color: #cf1022; /* Background color */
-    padding: 1em;
-    text-align: left;
-    font-size: small;
-    box-sizing: border-box; /* Ensures padding and border are included in the width */
-    display: flex; /* Utiliza flexbox para la alineación */
-    flex-direction: column; /* Alinea los elementos en una columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    justify-content: flex-start; /* Comienza desde la parte superior */
-    overflow-y: auto; /* Habilita el scroll en la barra derecha */
-    -ms-overflow-style: none; /* Oculta la barra en Internet Explorer */
-    scrollbar-width: none; /* Oculta la barra en Firefox */
-}
-
-.sidenav::-webkit-scrollbar {
-    display: none; /* Oculta la barra en Chrome, Safari y Opera */
-}
-
 .sidecard h3 {
     color: #000000;
     font-size: larger;
-    text-align: left; /* Unificado a un solo texto alineado a la izquierda */
-    font-weight: normal; /* Asegura que no esté en negrita */
+    text-align: left;
+    font-weight: normal;
 }
 
 .sidecard h2 {
     font-size: large;
     color: #fbbf00;
-    text-align: left; /* Unificado a un solo texto alineado a la izquierda */
+    text-align: left;
     font-style: italic;
-    font-weight: normal; /* Asegura que no esté en negrita */
+    font-weight: normal;
 }
 
 .sidecard-item {

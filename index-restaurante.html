@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <title>SnackTalk - Pedidos</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="script.js" defer></script> 
 </head>
 
 <body>
@@ -29,49 +28,11 @@
     </header>    
 
     <div class="container">
-        <div class="cards">
-            <div class="card">
-                <h2>Pedido #00123</h2>
-                <p><i class="fas fa-user"></i> Cliente: Juan Pérez</p>
-                <p><i class="fas fa-utensils"></i> Items: 1 Cheesebacon, 2 Papas Fritas</p>
-                <p><i class="fa-solid fa-money-bill"></i> Total: 18€</p>
-                <p><i class="fa-solid fa-hourglass-half"></i> Estado: Pendiente</p>
-            </div>
-
-            <div class="card-encamino">
-                <h2>Pedido #00124</h2>
-                <p><i class="fas fa-user"></i> Cliente: María López</p>
-                <p><i class="fas fa-utensils"></i> Items: 2 Cheeseburgers, 1 Coca Cola</p>
-                <p><i class="fa-solid fa-money-bill"></i> Total: 22€</p>
-                <p><i class="fa-solid fa-hourglass-half"></i> Estado: En camino</p>
-            </div>
-
-            <div class="card">
-                <h2>Pedido #00125</h2>
-                <p><i class="fas fa-user"></i> Cliente: Luis González</p>
-                <p><i class="fas fa-utensils"></i> Items: 3 Nuggets, 1 Milkshake</p>
-                <p><i class="fa-solid fa-money-bill"></i> Total: 15€</p>
-                <p><i class="fa-solid fa-hourglass-half"></i> Estado: Pendiente</p>
-            </div>
-
-            <div class="card-encamino">
-                <h2>Pedido #00126</h2>
-                <p><i class="fas fa-user"></i> Cliente: Ana Ramírez</p>
-                <p><i class="fas fa-utensils"></i> Items: 1 Cheesebacon, 1 Refresco</p>
-                <p><i class="fa-solid fa-money-bill"></i> Total: 12€</p>
-                <p><i class="fa-solid fa-hourglass-half"></i> Estado: En camino</p>
-            </div>
-
-            <div class="card-encamino">
-                <h2>Pedido #00127</h2>
-                <p><i class="fas fa-user"></i> Cliente: Carlos Díaz</p>
-                <p><i class="fas fa-utensils"></i> Items: 2 Hamburguesas Veganas, 1 Agua</p>
-                <p><i class="fa-solid fa-money-bill"></i> Total: 20€</p>
-                <p><i class="fa-solid fa-hourglass-half"></i> Estado: Pendiente</p>
-            </div>
+        <div class="cards" id="pedidos-container">
+            <!-- Los pedidos se cargarán aquí dinámicamente -->
         </div>
     </div>
 
 </body>
-
+<script type="module" src="js/index-restaurante.js"></script> 
 </html>

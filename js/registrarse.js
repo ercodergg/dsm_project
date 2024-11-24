@@ -1,3 +1,5 @@
+// registrarse.js
+import { getRestaurantes, getClientes } from './crud.js';
 console.log("El script se ha cargado correctamente.");
 // Función para manejar el envío del formulario
 function handleSubmit(event) {
@@ -41,7 +43,15 @@ function registrarCliente(nombre, correoElectronico, pass, pass2, telefono, dire
     console.log('Confirmar Contraseña:', pass2);
     console.log('Teléfono:', telefono);
     console.log('Dirección:', direccion);
+    const clientes = getClientes();
+    if (clientes.find(cliente => cliente.nombre === nombre)) {
+        console.log('El cliente ya existe');
+    } else {
+        console.log('El cliente ha sido registrado');
+        postCliente(nombre, correoElectronico, pass, pass2, telefono, direccion);
+    }
 }
+
 function registrarRestaurante(nombre, direccion, tipoCocina, pass, pass2, correoElectronico, telefono) {
     console.log('Registrando restaurante...');
     console.log('Nombre:', nombre);
@@ -51,7 +61,15 @@ function registrarRestaurante(nombre, direccion, tipoCocina, pass, pass2, correo
     console.log('Confirmar Contraseña:', pass2);
     console.log('Correo Electrónico:', correoElectronico);
     console.log('Teléfono:', telefono);
+    const restaurantes = getRestaurantes();
+    if (restaurantes.find(restaurante => restaurante.nombre === nombre)) {
+        console.log('El restaurante ya existe');
+    } else {
+        console.log('El restaurante ha sido registrado');
+        postRestaurante(nombre, direccion, tipoCocina, pass, pass2, correoElectronico, telefono);
+    }
 }
+
 // Agregar el evento de escucha cuando el documento esté completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('.buscar');
